@@ -26,6 +26,7 @@ public class tablaProductosGUI {
         p[3].guardaRegistro("P03", "MARGARINA", 1, 9.30, true);
         p[4].guardaRegistro("P04", "HUEVOS", 2, 45.00, false);
         p[5].guardaRegistro("P05", "CHILE(4OZ)", 3, 7.20, true);
+        p[6].guardaRegistro("P06", "PASTA(4OZ)", 2, 8.20, true);
         NR=5;
     }
     
