@@ -5,48 +5,57 @@ public class ListaDeNodos {
 
     public static void main(String[] args) {
         
-        //punteros a cada poscicion de los nodos 1(inicio), 2(final), 3(random)
+        int[] datos = {0,69,45,73,25,96,87,35,52,47,80};
         nodo p1,p2,p;
-              
-        nodo A1  = new nodo();
-        nodo A2  = new nodo();
-        nodo A3  = new nodo();
-        nodo A4  = new nodo();
-        nodo A5  = new nodo();
-        nodo A6  = new nodo();
-        nodo A7  = new nodo();
-        nodo A8  = new nodo();
-        nodo A9  = new nodo();
-        nodo A10 = new nodo();
+        p1=p2=p=null;
+        nodo A = new nodo();
         
-        p1 = A5;
-        p= A5;
-        p2=p1;
+        //declarando el nodo
+        for(int i=1;i<=10;i++){
+        A = new nodo();
+        A.info = datos[i];
+        if(i==1){
+            p1 = A; p=A; p2=A;
+        }else{    
+            p.conectar(A);
+            p = p.siguiente;
+            p2=A;}
+        }
         
-        A1.info=73;
-        A2.info=96;
-        A3.info=80;
-        A4.info=52;
-        A5.info=69;
-        A6.info=87;
-        A7.info=25;
-        A8.info=35;
-        A9.info=45;
-        A10.info=47;
+//        A = new nodo();
+//        A.info = datos[3];
+//        p.conectar(A);
+//        p = p.siguiente;
+//        p2=A;
         
-        //conectando nodos
-        A5.conectar(A9);
-        A9.conectar(A1);
-        A1.conectar(A7);
-        A7.conectar(A2);
-        A2.conectar(A6);
-        A8.conectar(A4);
-        A4.conectar(A10);
-        A10.conectar(A3);
+        p=p1;
+        //haciendo saltar al nodo
+        while(p!=null){
+        System.out.print(p.info+",  ");
+        p=p.siguiente;
+        }
         
-        System.out.println(p1.info);
-        System.out.println(p2.siguiente.info);
-        System.out.println(A5.siguiente.siguiente.info);
+        int NR = datos.length-1;
+        
+        System.out.println("\n==============================================");
+        System.out.println("Numero de registros:>>" + NR);
+        System.out.println("==============================================");
+        
+        p=p2;
+        while(p!=null){
+        System.out.print(p.info+",  ");
+        p=p.anterior;
+        }
+
+//imprimiendo cada nodo manual        
+//        System.out.println(p.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.siguiente.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.siguiente.siguiente.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.info);
+//        System.out.println(p.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.siguiente.info);
         
         System.out.println("");
     }
