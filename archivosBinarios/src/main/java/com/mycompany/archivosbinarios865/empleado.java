@@ -28,4 +28,11 @@ public class empleado {
         this.sueldo = sueldo;
     }
     
+    public void ImprimeRegistro(){
+        String f1,f2,f3,f4,f;
+        f1="%-5s";  f2="%-15s"; f3="%-5d"; f4="%-7.2f";
+        f = f1 + f2 + f3 + f4 + "\n";
+        System.out.format(f,codigoEmpleado,nombreEmpleado,edad,sueldo);
+    }
+    
 }
